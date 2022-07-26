@@ -15,7 +15,7 @@ pipeline {
         stage ("build") {
             steps {
                 sh """
-                    mvn clean install
+//                     mvn clean install
                     echo 'this is for'
                     echo 'multiple lines'
                     """
