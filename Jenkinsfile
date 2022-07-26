@@ -28,35 +28,35 @@ pipeline {
             }
         }
 
-        stage ('publish') {
-            steps {
-                rtUpload (
-                    serverId: "myjfrog",
-                    spec: '''{
-                        "files": [
-                            {
-                            "pattern": "target/*.jar",
-                            "target": "skr-login/"
-                            }
-                        ]
-                    }''',
-                    buildName: "${JOB_NAME}",
-                    buildNumber: "${BUILD_NUMBER}"
-                )
-            }  
-        }
+//         stage ('publish') {
+//             steps {
+//                 rtUpload (
+//                     serverId: "myjfrog",
+//                     spec: '''{
+//                         "files": [
+//                             {
+//                             "pattern": "target/*.jar",
+//                             "target": "skr-login/"
+//                             }
+//                         ]
+//                     }''',
+//                     buildName: "${JOB_NAME}",
+//                     buildNumber: "${BUILD_NUMBER}"
+//                 )
+//             }  
+//         }
 
-        stage ('deploy') {
-            steps {
-                sh 'echo "ansible -i hosts_file playbook.yml"'
-            }
-        }
-    }
+//         stage ('deploy') {
+//             steps {
+//                 sh 'echo "ansible -i hosts_file playbook.yml"'
+//             }
+//         }
+//     }
     
-    post {
-        always {
-            emailext body: 'this is status of job "${BUILD_URL}"', subject: 'Job Status', to: 'tejesh2311@gmail.com'
-        }
-    }
+//     post {
+//         always {
+//             emailext body: 'this is status of job "${BUILD_URL}"', subject: 'Job Status', to: 'tejesh2311@gmail.com'
+//         }
+//     }
       
 }
