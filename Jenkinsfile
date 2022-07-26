@@ -2,6 +2,7 @@
 
 pipeline {
     agent any
+    stages {
 //     agent {label "test_label"} 
 //     tools {maven "mymvn"}
 //     stages {
@@ -59,5 +60,5 @@ pipeline {
 //             emailext body: 'this is status of job "${BUILD_URL}"', subject: 'Job Status', to: 'tejesh2311@gmail.com'
 //         }
 //     }
-      
+    }      
 }
