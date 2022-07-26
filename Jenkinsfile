@@ -1,8 +1,9 @@
-def app_name = "${project_name}"
+// def app_name = "${project_name}"
 
 pipeline {
-    agent {label "test_label"} 
-    tools {maven "mymvn"}
+    agent any
+//     agent {label "test_label"} 
+//     tools {maven "mymvn"}
 //     stages {
 //         stage("git clone") {
 //             steps {
